@@ -1,0 +1,15 @@
+name: run_all_tests
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  RunAllTests:
+    runs-on: ubuntu-latest
+    container: python
+    steps:
+      - uses: actions/checkout@v2
+      - name: run_all_tests
+        run: |
+          pip install -r requirements.txt
+          pip install -r test-requirements.txt
+          python -m pytest

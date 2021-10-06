@@ -4,8 +4,8 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   RunAllTests:
-    runs-on: ubuntu-latest
-    container: python
+    runs-on: ubuntu-20.04
+    container: python:3.9.7
     steps:
       - uses: actions/checkout@v2
       - name: run_all_tests
